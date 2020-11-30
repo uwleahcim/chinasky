@@ -1,0 +1,174 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Mistral";
+  src: url("/fonts/mistral.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/mistral.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/fonts/mistral.otf") format("opentype"), /* Open Type Font */
+    url("/fonts/mistral.svg") format("svg"), /* Legacy iOS */
+    url("/fonts/mistral.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/fonts/mistral.woff") format("woff"), /* Modern Browsers */
+    url("/fonts/mistral.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Calligraphic421BT-RomanB";
+  src: url("/fonts/Calligraphic421BT.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/Calligraphic421BT.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/fonts/Calligraphic421BT.otf") format("opentype"), /* Open Type Font */
+    url("/fonts/Calligraphic421BT.svg") format("svg"), /* Legacy iOS */
+    url("/fonts/Calligraphic421BT.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/fonts/Calligraphic421BT.woff") format("woff"), /* Modern Browsers */
+    url("/fonts/Calligraphic421BT.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.category-name-container {
+  /* display: grid; */
+  /* grid-gap: 20px; */
+  background: rgb(165, 165, 165);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+/* .category-name-container {} */
+
+.category-name {
+  /* font-weight: bold; */
+  font-family: 'Mistral'; 
+  font-size: 36px;
+  color: darkred;
+  text-align: center;
+}
+
+/* .category-description {} */
+#menu-container {
+}
+
+.item-container-wrapper {
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid-column;
+  page-break-inside: avoid-column;
+  break-inside: avoid-column;
+}
+
+.items-container {
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  background-color: #ffffff;
+  /* grid-template-columns: 1fr; */
+  flex-wrap: wrap;
+
+  flex-direction: column;
+  /* gap: 10px 40px; */
+  -webkit-column-break-inside: avoid-column;
+  page-break-inside: avoid-column;
+  break-inside: avoid-column;  
+}
+.items-container-wrapper {
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  background-color: #ffffff;
+  /* grid-template-columns: 1fr; */
+  column-count: 1;  /* gap: 10px 40px; */
+  column-gap: 20px;
+  padding-top: 20px;
+  padding-left: max(10px, env(safe-area-inset-left));
+  padding-right: max(10px, env(safe-area-inset-right));
+}
+
+.items-container-wrapper-column-buffer {
+  padding-bottom: 20px;
+}
+
+
+@media (min-width: 666px){
+  #menu-container {
+  }
+  .items-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .items-container-wrapper {
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    background-color: #ffffff;
+    /* grid-template-columns: 1fr; */
+    column-count: 2;  /* gap: 10px 40px; */
+    column-gap: 20px;
+    column-rule: 4px double darkred;
+  }
+  
+}
+@media (min-width: 1440px){
+  #menu-container {
+  }
+
+  .items-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .items-container-wrapper {
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    background-color: #ffffff;
+    /* grid-template-columns: 1fr; */
+    column-count: 3;  /* gap: 10px 40px; */
+    column-gap: 20px;
+    column-rule: 4px double darkred;
+  }
+  
+} 
+
+.item-container {
+  font-family: 'Calligraphic421BT-RomanB';
+  display: grid;
+  width: auto;
+  grid-template-columns: 60px 1fr 60px;
+  grid-template-rows: auto auto;
+  grid-template-areas: "item-code item-name item-price" "item-code  item-description item-price";
+  -webkit-column-break-inside: avoid-column;
+  page-break-inside: avoid-column;
+  break-inside: avoid-column;
+  
+}
+
+.item-code {
+  grid-area: item-code;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item-name {
+  grid-area: item-name;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item-price {
+  grid-area: item-price;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right
+}
+
+.item-description {
+  grid-area: item-description;
+  font-size: 20px;
+
+}
+
+.js-collapse {
+  overflow: hidden;
+  /* -moz-transition: height 5.3s ease-out;
+  -ms-transition: height 5.3s ease-out;
+  -o-transition: height 5.3s ease-out;
+  -webkit-transition: height 5.3s ease-out; */
+  /* transition: height 5.3s; */
+  height: auto;
+}
